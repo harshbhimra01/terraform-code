@@ -37,7 +37,7 @@ resource "azurerm_storage_account" "explicit" {
 }
 
 resource "azurerm_storage_container" "name" {
-  depends_on = [ azurerm_storage_account.implicit ]
+  depends_on = [ azurerm_storage_account.explicit ]
   name = "container"
   storage_account_id = "harshchetansujeet"
   container_access_type = "blob"
