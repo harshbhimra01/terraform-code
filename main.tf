@@ -35,3 +35,10 @@ resource "azurerm_storage_account" "explicit" {
   account_replication_type = "LRS"
 
 }
+
+resource "azurerm_storage_container" "name" {
+  depends_on = [ azurerm_storage_account.implicit ]
+  name = "container"
+  storage_account_id = "harshchetansujeet"
+  container_access_type = "private"
+}
